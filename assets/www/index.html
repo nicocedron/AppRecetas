@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>APP Recetas</title>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>		
+	</head>
+	<body>
+		
+		<div data-role="page" id="inicio">
+			<div data-role="header" data-position="fixed">
+				<h1>APP de Recetas</h1>
+				<a href="#agregar" class="ui-btn-right" data-role="button" data-iconpos="notext" data-icon="plus"></a>
+			</div>
+			
+			
+			<div data-role="content">
+				<ul id="lista" data-role="listview" data-filter="true" data-filter-placeholder="Buscar" data-inset="true">
+					
+				</ul>
+			</div>
+			
+			
+			<div data-role="footer" data-position="fixed">
+				<h2>NordecMedia.com</h2>
+			</div>
+		</div>	
+
+		
+		<div data-role="page" id="info">
+			<div data-role="header" data-position="fixed">
+				<a data-role="button" data-rel="back" data-icon="arrow-l" href="#inicio" data-transition="slide" data-iconpos="notext">Atras</a>
+				<h1 id="titulo"></h1>
+				<a data-role="button" data-icon="grid" href="#acciones" data-iconpos="notext">OP</a>
+			</div>
+			
+			
+			<div data-role="content" id="contenido">
+
+			</div>
+			
+			
+			<div data-role="footer" data-position="fixed">
+				<h2>NordecMedia.com</h2>
+			</div>
+		</div>
+
+		<div data-role="dialog" id="acciones">
+			<div data-role="header" data-position="fixed">
+				
+				<h1>Acciones</h1>
+				
+			</div>
+			
+			
+			<div data-role="content" id="contenido">
+				<input type="button" onclick="editar()" value="Editar"/>
+				<a data-role="button" value="Eliminar" data-theme="b" href="#eliminar">Eliminar</a>
+			</div>
+			
+		</div>
+		
+		<div data-role="dialog" id="eliminar">
+			<div data-role="header" data-position="fixed">
+				
+				<h1>Esta seguro?</h1>
+				
+			</div>
+			
+			
+			<div data-role="content">
+					<div style="text-align:center" data-role="controlgroup" data-type="horizontal">
+						<a href="#" data-role="button" onclick="eliminar(); return false">Si</a>
+						<a href="#" data-theme="b" data-rel="back" data-role="button">No</a>
+					</div>
+			</div>
+			
+		</div>
+		
+		<!--Pagina Agregar -->
+		<div data-role="page" id="agregar">
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-rel="back" data-icon="arrow-l" data-role="button" data-iconpos="notext"></a>
+				<h1>Agregar Receta</h1>
+				
+			</div>
+			
+			
+			<div data-role="content">
+					<input type="hidden" id="idSave" value="0"/>
+					<input type="text" id="saveTitulo" placeholder="Titulo" required/>
+					<textarea id="saveContenido" placeholder="Preparacion" required></textarea>
+					<input type="button" value="Guardar" onclick="guardar()" data-theme="e"/>
+			</div>
+			
+			
+			<div data-role="footer" data-position="fixed">
+				<h2>NordecMedia.com</h2>
+			</div>			
+		</div>
+					
+		<!-- Fin Agregar -->
+		
+		<script type="text/javascript" src="cordova-2.3.0.js"></script>
+		<script type="text/javascript" src="funciones.js"></script>
+		<script type="text/javascript" src="acciones.js"></script>
+	</body>
+</html>
+
